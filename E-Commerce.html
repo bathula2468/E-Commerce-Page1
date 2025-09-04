@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple E-Commerce</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    nav a { margin: 10px; text-decoration: none; color: blue; }
+    section { display: none; }
+    section.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <h1>🛒 My E-Commerce Site</h1>
+  <nav>
+    <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+    <a href="#" onclick="showPage('product')">Product Detail</a>
+    <a href="#" onclick="showPage('checkout')">Checkout</a>
+  </nav>
+
+  <section id="dashboard" class="active">
+    <h2>📊 Dashboard</h2>
+    <p>Welcome to your dashboard. View orders, manage products, and track sales.</p>
+  </section>
+
+  <section id="product">
+    <h2>📦 Product Detail</h2>
+    <p><strong>Product Name:</strong> Stylish Sneakers</p>
+    <p><strong>Price:</strong> ₹2,499</p>
+    <p><strong>Description:</strong> Comfortable and trendy sneakers for everyday wear.</p>
+    <button onclick="alert('Added to cart!')">Add to Cart</button>
+  </section>
+
+  <section id="checkout">
+    <h2>💳 Checkout</h2>
+    <p>Review your items and complete your purchase.</p>
+    <form>
+      <label>Name: <input type="text" required></label><br><br>
+      <label>Address: <input type="text" required></label><br><br>
+      <label>Payment Method:
+        <select>
+          <option>Credit Card</option>
+          <option>UPI</option>
+          <option>Cash on Delivery</option>
+        </select>
+      </label><br><br>
+      <button type="submit">Place Order</button>
+    </form>
+  </section>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
